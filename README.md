@@ -4,7 +4,7 @@
 
 **Time Off Accrual Calendar: see what every day off will cost you before you book it**
 
-![Version](https://img.shields.io/badge/version-2026--11--11%20mk3-6D28D9)
+![Version](https://img.shields.io/badge/version-2026--11--11%20mk4-6D28D9)
 ![Single file](https://img.shields.io/badge/single%20file-HTML-4338CA)
 ![No account needed](https://img.shields.io/badge/no%20sign--up-required-334155)
 ![PageVault ready](https://img.shields.io/badge/PageVault-ready-2563eb)
@@ -52,11 +52,11 @@ A Better PTO Tracker is a calendar that shows what each of your time-off **banks
 
 ## Where your data is stored
 
-| Opened from… | Saved to |
-|---|---|
-| **PageVault** | Your own server, separately for each signed-in person |
-| **Claude** | Your Claude account, with this browser as a backup |
-| **A local file** | This browser only. The app reminds you every 7 days to download a backup. |
+| Opened from… | Saved to | Status shown in the app |
+|---|---|---|
+| **PageVault** | Your own server only, separately for each signed-in person. Nothing is kept in the browser. | *Saved to your server* |
+| **Claude** | Your Claude account, with this browser as a backup | *Saved to your account* |
+| **A local file** | This browser only. The app reminds you every 7 days to download a backup. | *Saved on this device only* |
 
 ## Versioning
 
@@ -64,7 +64,8 @@ Every release is a new file named with the release date, plus `mkN` when there's
 
 | Version | Notes |
 |---|---|
-| **2026-11-11 mk3** | Current release |
+| **2026-11-11 mk4** | Shows where data is saved: *Saved to your server* in PageVault (no backup reminders there), *Saved on this device only* elsewhere. The last edit is now saved even if the page is closed right away. |
+| **2026-11-11 mk3** | Previous release |
 
 ---
 
