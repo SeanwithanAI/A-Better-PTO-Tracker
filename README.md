@@ -60,7 +60,7 @@ A Better PTO Tracker is a calendar that shows what each of your time-off **banks
 
 ## Versioning
 
-Every release is a new file named with the release date, plus `mkN` when there's more than one release that day, e.g. `A-Better-PTO-Tracker-2026-11-11-mk3.html`. The version also appears under the app's name. Older files stay in the repo, so PageVault can roll back to any of them.
+Every release is a new file named with the release date. The first release of a day is just the date; later releases that same day add `mk1`, `mk2`, `mk3`… (the count starts over each day), e.g. `A-Better-PTO-Tracker-2026-11-12.html`, then `A-Better-PTO-Tracker-2026-11-12-mk1.html`. The version also appears under the app's name. Older files stay in the repo, so PageVault can roll back to any of them.
 
 | Version | Notes |
 |---|---|
