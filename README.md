@@ -4,7 +4,7 @@
 
 **Time Off Accrual Calendar: see what every day off will cost you before you book it**
 
-![Version](https://img.shields.io/badge/version-2026--11--11%20mk4-6D28D9)
+![Version](https://img.shields.io/badge/version-2026--11--12-6D28D9)
 ![Single file](https://img.shields.io/badge/single%20file-HTML-4338CA)
 ![No account needed](https://img.shields.io/badge/no%20sign--up-required-334155)
 ![PageVault ready](https://img.shields.io/badge/PageVault-ready-2563eb)
@@ -28,7 +28,8 @@ A Better PTO Tracker is a calendar that shows what each of your time-off **banks
 - **A balance on every day.** Each calendar day shows the projected balance of every bank. Red means a bank has gone negative.
 - **One-tap booking.** Pick a bank, tap a day to spend it, or turn on **½ day** (or Shift-click) for a half day. **Clear day** wipes a date.
 - **Paydays and pay periods.** Paydays are outlined in green, and a thin marker shows where each pay period starts.
-- **Holidays.** Choose a preset (Federal, MN State, Private Sector, City, and more) or add your own. Holidays are labels only and never change the math.
+- **Holidays.** Choose a schedule (City, State, Federal, Private Sector, and more) or add your own. Change which holidays are in any schedule; your edits are saved with your data, not the app, and **Reset this schedule** puts it back. Holidays are labels only and never change the math.
+- **Vacation incentive.** Earn extra hours on January 1 for using little sick leave the year before. The default: 8 or fewer sick hours used earns 8 vacation hours, up to 16 earns 6, up to 20 earns 4. Edit the rows, pick which bank it's based on and which it pays into, or add your own incentives. Saved with your data.
 - **On-call weeks.** These can be highlighted; comp time posts at the start of each one.
 - **Year-end rules.** On January 1, anything above a bank's carryover limit is dropped automatically.
 - **Hours or days.** Count balances in hours or days, with your own length of a working day.
@@ -64,6 +65,7 @@ Every release is a new file named with the release date. The first release of a 
 
 | Version | Notes |
 |---|---|
+| **2026-11-12** | New **Vacation incentive** tile next to Personal holiday: hours earned on January 1 based on sick leave used the year before (default chart: ≤8 hrs → 8, ≤16 → 6, ≤20 → 4), fully editable, with your own incentives. Holiday schedules renamed to **City** and **State**, and every schedule can now be edited; edits are saved with your data. |
 | **2026-11-11 mk4** | Shows where data is saved: *Saved to your server* in PageVault (no backup reminders there), *Saved on this device only* elsewhere. The last edit is now saved even if the page is closed right away. |
 | **2026-11-11 mk3** | Previous release |
 
