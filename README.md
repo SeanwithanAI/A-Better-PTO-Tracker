@@ -4,7 +4,7 @@
 
 **Time Off Accrual Calendar: see what every day off will cost you before you book it**
 
-![Version](https://img.shields.io/badge/version-2026--11--14-6D28D9)
+![Version](https://img.shields.io/badge/version-2026--11--14%20mk1-6D28D9)
 ![Single file](https://img.shields.io/badge/single%20file-HTML-4338CA)
 ![No account needed](https://img.shields.io/badge/no%20sign--up-required-334155)
 ![PageVault ready](https://img.shields.io/badge/PageVault-ready-2563eb)
@@ -35,6 +35,7 @@ A Better PTO Tracker is a calendar that shows what each of your time-off **banks
 - **Hours or days.** Count balances in hours or days, with your own length of a working day.
 - **Backup and import.** Download a backup file and restore it on any device.
 - **Day, Dark and Auto** themes.
+- **Download this app.** In Settings, download the HTML file for the version you're using, to keep or to run on its own. In PageVault it's the exact file that's installed. Your data isn't in it, so back up for that.
 
 ## Screenshots
 
@@ -64,6 +65,7 @@ Every release is a new file named with the release date. The first release of a 
 
 | Version | Notes |
 |---|---|
+| **2026-11-14 mk1** | **Download this app** in settings (next to Back up and Import): the HTML file for this version, to keep or run on its own. |
 | **2026-11-14** | Behind-the-scenes cleanup of the City holiday schedule; your saved schedule and edits carry over. Older release files were removed from the repo. |
 | **2026-11-13** | Version bump only, no changes. |
 | **2026-11-12 mk1** | Vacation incentive: milestone bar of the year's sick hours used (full at 0, shrinking as you use time, with ticks where the reward drops), green 😊 / red ☹️ message for what you'll get in January, and a January 1 popup asking whether to add the hours to your existing balance (Yes / No / Ask me later, with Undo in the tile). |
