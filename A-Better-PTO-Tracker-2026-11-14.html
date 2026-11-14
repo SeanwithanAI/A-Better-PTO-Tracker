@@ -232,6 +232,29 @@
   .incnote{font-size:12.5px;color:var(--ink-soft);line-height:1.5;margin:12px 0 0}
   .incnote b{color:var(--ink)}
   .incbtns{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+  .ibar{margin-top:14px}
+  .ibar .track{position:relative;height:14px;border-radius:999px;background:var(--line);overflow:hidden}
+  .ibar .fill{position:absolute;left:0;top:0;bottom:0;border-radius:999px;transition:width .25s ease,background .25s ease}
+  .ibar .tick{position:absolute;top:0;bottom:0;width:2px;margin-left:-1px;background:var(--surface);opacity:.9}
+  .ibar .segs{position:relative;height:16px;margin-top:4px;font-size:11.5px;font-weight:700;color:var(--ink-soft)}
+  .ibar .segs span{position:absolute;transform:translateX(-50%);white-space:nowrap}
+  .ibar .segs span.cur{color:var(--ink)}
+  .ibar .cap{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--ink-soft);margin-top:2px}
+  .imood{display:flex;align-items:flex-start;gap:8px;margin-top:10px;font-size:13.5px;font-weight:700;line-height:1.4}
+  .imood .face{font-size:20px;line-height:1}
+  .imood.good{color:var(--v)} .imood.bad{color:var(--warn)}
+  .idone{font-size:12.5px;color:var(--ink-soft);margin-top:10px}
+  .idone button{font:inherit;font-weight:700;color:var(--ink);background:none;border:0;padding:0;text-decoration:underline;cursor:pointer}
+  .incmodal{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;padding:18px;background:rgba(15,20,30,.45)}
+  .incmodal[hidden]{display:none}
+  .incbox{width:min(440px,100%);background:var(--surface);color:var(--ink);border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.3);padding:22px 22px 18px}
+  .incbox h3{margin:0 0 8px;font-size:18px;letter-spacing:-.01em}
+  .incbox p{margin:0 0 10px;font-size:14px;line-height:1.5;color:var(--ink-soft)}
+  .incbox p b{color:var(--ink)}
+  .incbox .big{font-size:34px;line-height:1;margin-bottom:8px}
+  .incbox .acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+  .incbox .acts .linkish{flex:1 1 auto;min-height:42px}
+  .incbox .acts .yes{background:var(--v);border-color:var(--v);color:var(--on-accent)}
   .incbtns .linkish{font-size:12.5px;padding:7px 12px}
   fieldset.dates{margin-top:16px}
   fieldset.dates legend::before{background:var(--ink-soft)}
@@ -390,13 +413,13 @@
 <body>
 <div id="nojs" style="max-width:560px;width:calc(100% - 32px);box-sizing:border-box;margin:40px auto;padding:22px 24px;border:1px solid #E4E7EC;border-radius:16px;background:#fff;color:#101828;font:15px/1.6 system-ui,-apple-system,sans-serif">
   <h1 style="font-size:24px;font-weight:800;margin:0 0 6px;letter-spacing:-.02em">A Better PTO Tracker</h1>
-  <p style="margin:0 0 14px;color:#667085;font-weight:600">Time Off Accrual Calendar · Version 2026-11-12 · by SeanwithanAI</p>
+  <p style="margin:0 0 14px;color:#667085;font-weight:600">Time Off Accrual Calendar · Version 2026-11-14 · by SeanwithanAI</p>
   <strong style="font-size:17px">This preview can’t run the calendar.</strong>
   <p style="margin:8px 0 0">The iPhone Files preview shows web pages without running their scripts, so the tracker stays blank here. Open the tracker from its Claude link instead, or open this file in a browser on a computer.</p>
 </div>
 <div class="sheet">
   <header>
-    <div class="brand"><svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="A Better PTO Tracker logo"> <defs> <linearGradient id="lgbg" x1="0" y1="0" x2="1" y2="1"> <stop offset="0" stop-color="#3B82F6"/><stop offset="1" stop-color="#6D28D9"/> </linearGradient> <linearGradient id="lggl" x1="0" y1="0" x2="0" y2="1"> <stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".55" stop-color="#fff" stop-opacity="0"/> </linearGradient> </defs> <rect width="64" height="64" rx="15" fill="url(#lgbg)"/> <rect width="64" height="64" rx="15" fill="url(#lggl)"/> <circle cx="32" cy="32" r="20.5" fill="none" stroke="#fff" stroke-opacity=".25" stroke-width="4.5"/> <circle cx="32" cy="32" r="20.5" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="96.6 200" transform="rotate(-90 32 32)"/> <circle cx="11.5" cy="32" r="4.2" fill="#fff"/> <circle cx="11.5" cy="32" r="1.8" fill="#6D28D9"/> <path transform="translate(32.5 31.5) rotate(45) scale(1.05)" fill="#fff" d="M0,-11 C1.3,-11 2,-9.8 2,-8.5 L2,-3 L11,2.5 L11,5 L2,2.5 L2,7 L5,9.5 L5,11 L0,9.8 L-5,11 L-5,9.5 L-2,7 L-2,2.5 L-11,5 L-11,2.5 L-2,-3 L-2,-8.5 C-2,-9.8 -1.3,-11 0,-11 Z"/> </svg><span class="bname">A Better PTO Tracker<small>Time Off Accrual Calendar</small><small class="by">by SeanwithanAI</small><b class="ver" id="appVer">2026-11-12</b></span></div>
+    <div class="brand"><svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="A Better PTO Tracker logo"> <defs> <linearGradient id="lgbg" x1="0" y1="0" x2="1" y2="1"> <stop offset="0" stop-color="#3B82F6"/><stop offset="1" stop-color="#6D28D9"/> </linearGradient> <linearGradient id="lggl" x1="0" y1="0" x2="0" y2="1"> <stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".55" stop-color="#fff" stop-opacity="0"/> </linearGradient> </defs> <rect width="64" height="64" rx="15" fill="url(#lgbg)"/> <rect width="64" height="64" rx="15" fill="url(#lggl)"/> <circle cx="32" cy="32" r="20.5" fill="none" stroke="#fff" stroke-opacity=".25" stroke-width="4.5"/> <circle cx="32" cy="32" r="20.5" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="96.6 200" transform="rotate(-90 32 32)"/> <circle cx="11.5" cy="32" r="4.2" fill="#fff"/> <circle cx="11.5" cy="32" r="1.8" fill="#6D28D9"/> <path transform="translate(32.5 31.5) rotate(45) scale(1.05)" fill="#fff" d="M0,-11 C1.3,-11 2,-9.8 2,-8.5 L2,-3 L11,2.5 L11,5 L2,2.5 L2,7 L5,9.5 L5,11 L0,9.8 L-5,11 L-5,9.5 L-2,7 L-2,2.5 L-11,5 L-11,2.5 L-2,-3 L-2,-8.5 C-2,-9.8 -1.3,-11 0,-11 Z"/> </svg><span class="bname">A Better PTO Tracker<small>Time Off Accrual Calendar</small><small class="by">by SeanwithanAI</small><b class="ver" id="appVer">2026-11-14</b></span></div>
     <div class="headright">
       <span class="syncwrap"><span class="sync" id="sync" role="status">Loading…</span>
       <button type="button" class="nudge" id="nudge" hidden></button></span>
@@ -442,7 +465,7 @@
     Every day shows what each bank will be worth on that date, so you can see what a week off costs you before you book it.<br>
     <b>Clear day</b> wipes every bank on one date. Clicking the selected bank again turns it off, and days stop responding.<br>
     Green outline is payday, counted from the <b>recent payday</b> you enter under Anchor dates. The gray sliver marks where a pay period starts. Purple is a holiday you get off (pick a schedule or add your own under <b>Holidays</b> below); it’s a label only and never touches the math. Blue bar is an on-call week, which is where comp time is earned. Red means that bank has gone negative.<br>
-    On <b>January 1</b>, anything above a bank’s year-end carryover limit is lost (Vacation keeps up to 192 hours by default). Personal holiday grants 16 hours every January 1, and whatever you didn’t use the year before is lost. The <b>Vacation incentive</b> adds hours on January 1 for using little sick leave the year before (8 hours for 8 or fewer used, 6 for up to 16, 4 for up to 20, by default).
+    On <b>January 1</b>, anything above a bank’s year-end carryover limit is lost (Vacation keeps up to 192 hours by default). Personal holiday grants 16 hours every January 1, and whatever you didn’t use the year before is lost. The <b>Vacation incentive</b> adds hours on January 1 for using little sick leave the year before (8 hours for 8 or fewer used, 6 for up to 16, 4 for up to 20, by default). Its bar shows how much you can still use; on January 1 you’re asked before the hours are added.
   </p>
 
   <div class="panels" id="panels"></div>
@@ -457,7 +480,7 @@
     <button class="linkish" id="doImport">Import</button>
   </div>
 
-  <p class="appinfo"><b>A Better PTO Tracker</b> · Time Off Accrual Calendar · Version <span id="appVer2">2026-11-12</span> · by SeanwithanAI</p>
+  <p class="appinfo"><b>A Better PTO Tracker</b> · Time Off Accrual Calendar · Version <span id="appVer2">2026-11-14</span> · by SeanwithanAI</p>
 
   <div class="io" id="io">
     <h2 id="ioTitle">Back up</h2>
@@ -478,7 +501,7 @@
 document.getElementById('nojs').remove();
 document.documentElement.classList.add('js');
 // version = the date of the update; a second update that day is "mk2", then "mk3"…
-const APP_NAME = 'A Better PTO Tracker', APP_VERSION = '2026-11-12', APP_BY = 'SeanwithanAI';   // bump the version with every update
+const APP_NAME = 'A Better PTO Tracker', APP_VERSION = '2026-11-14', APP_BY = 'SeanwithanAI';   // bump the version with every update
 const FILE_BASE = APP_NAME.replace(/ /g, '-');   // A-Better-PTO-Tracker
 const DAY = 86400000;
 const idxOf = (y,m,d) => Math.floor(Date.UTC(y,m,d)/DAY);
@@ -630,14 +653,18 @@ function incentiveOn(i, k){
   if(incCache.has(ck)) return incCache.get(ck);
   const y = dateOf(i).getUTCFullYear();
   let h = 0;
-  (cfg.incentives||[]).forEach(I => { if(I.on!==false && I.to===k) h += incTier(I, usedHours(y-1, I.from)); });
+  (cfg.incentives||[]).forEach(I => {
+    if(I.on===false || I.to!==k) return;
+    if(i <= todayIdx && (cfg.incAwards||{})[y + '|' + I.id] !== 'yes') return;   // already here: only once you've said yes
+    h += incTier(I, usedHours(y-1, I.from));
+  });
   const v = cfg.unit==='days' ? (cfg.dayLen ? h / cfg.dayLen : 0) : h;
   incCache.set(ck, v);
   return v;
 }
 
 /* ---- state ---- */
-const cfg = { dayLen:8, unit:'hours', active:'v', balanceDate:'', anchor:'', payDate:'2026-11-06', compStart:'', backdate:false, oncall:false, off:{}, tracks:{}, theme:'auto', show:{v:true,s:true,c:true,p:true}, holidays:{}, holPreset:'', customHols:[], presetIds:{}, incentives:[INC_DEFAULT()] };
+const cfg = { dayLen:8, unit:'hours', active:'v', balanceDate:'', anchor:'', payDate:'2026-11-06', compStart:'', backdate:false, oncall:false, off:{}, tracks:{}, theme:'auto', show:{v:true,s:true,c:true,p:true}, holidays:{}, holPreset:'', customHols:[], presetIds:{}, incentives:[INC_DEFAULT()], incAwards:{} };
 let view, todayIdx, halfMode = false;
 
 const anchorFor = k => k==='c' ? (cfg.compStartIdx ?? cfg.anchorIdx) : cfg.anchorIdx;
@@ -962,10 +989,69 @@ function writeIncentives(){
         + '<input type="number" class="tEarn" data-t="' + j + '" step="0.5" min="0" inputmode="decimal" value="' + t.earn + '" aria-label="Hours earned">'
         + '<button type="button" class="holx" data-tdel="' + j + '" aria-label="Remove this row" title="Remove">×</button>').join('')
       + '</div>'
-      + '<p class="incnote">' + (I.on===false ? 'Off.' : '<b>' + y + ' so far:</b> ' + fmtH(used) + ' of ' + bankName(I.from) + ' used, which earns <b>' + fmtH(earn) + '</b> of ' + bankName(I.to) + ' on Jan 1, ' + (y+1) + '. More than ' + fmtH(Math.max(0, ...(I.tiers||[]).map(t => +t.upTo || 0))) + ' earns nothing.') + '</p>'
+      + (I.on===false ? '<p class="incnote">Off.</p>' : incBar(I, used, earn, y) + incDecision(I, y))
       + '<div class="incbtns"><button type="button" class="linkish" data-tadd>+ Add row</button><button type="button" class="linkish" data-idel>Remove incentive</button></div>'
       + '</div>';
   }).join('') || '<p class="incnote">No incentives. Add one if your employer rewards unused leave.</p>';
+}
+// milestone bar: full at 0 hours used, shrinking as hours are used; ticks where the reward drops
+function incBar(I, used, earn, y){
+  const tiers = (I.tiers||[]).filter(t => isFinite(t.upTo)).slice().sort((a,b) => a.upTo - b.upTo);
+  const max = Math.max(0, ...tiers.map(t => +t.upTo || 0));
+  if(!max) return '<p class="incnote">Add a row to set how many hours you can use.</p>';
+  const left = Math.max(0, max - used), pct = v => (v / max * 100).toFixed(2) + '%';
+  const cur = tiers.find(t => used <= t.upTo + 1e-9), best = Math.max(0, ...tiers.map(t => +t.earn || 0));
+  const color = !earn ? 'var(--warn)' : earn >= best ? 'var(--v)' : earn >= best / 2 ? '#CA8A04' : 'var(--p)';
+  let prev = 0, segs = '', ticks = '';
+  tiers.forEach(t => {   // a tier covers used hours prev..upTo, which is bar position (max-upTo)..(max-prev)
+    const a = max - t.upTo, b = max - prev;
+    if(t.upTo < max) ticks += '<i class="tick" style="left:' + pct(a) + '"></i>';
+    segs += '<span' + (t===cur ? ' class="cur"' : '') + ' style="left:' + pct((a + b) / 2) + '">+' + fmtH(+t.earn || 0).replace(/ hrs?$/, '') + '</span>';
+    prev = t.upTo;
+  });
+  const next = cur ? cur.upTo - used : 0;
+  return '<div class="ibar" role="meter" aria-valuemin="0" aria-valuemax="' + max + '" aria-valuenow="' + left + '" aria-label="' + esc(I.name) + ': hours left">'
+    + '<div class="track"><div class="fill" style="width:' + pct(left) + ';background:' + color + '"></div>' + ticks + '</div>'
+    + '<div class="segs">' + segs + '</div>'
+    + '<div class="cap"><span>' + fmtH(used) + ' of ' + (TRACKS.find(T => T.k===I.from)||{name:''}).name.toLowerCase() + ' used in ' + y + '</span><span>'
+    + (earn ? fmtH(next) + ' until it drops' : 'over ' + fmtH(max)) + '</span></div></div>'
+    + (earn
+      ? '<div class="imood good"><span class="face" aria-hidden="true">😊</span><span>You’re on track to get ' + fmtH(earn) + ' of ' + (TRACKS.find(T => T.k===I.to)||{name:''}).name.toLowerCase() + ' on January 1, ' + (y+1) + '!</span></div>'
+      : '<div class="imood bad"><span class="face" aria-hidden="true">☹️</span><span>You aren’t going to get anything in January. More than ' + fmtH(max) + ' used this year.</span></div>');
+}
+// this January's award: added, skipped, or still waiting for an answer
+function incDecision(I, y){
+  const j = idxOf(y,0,1), award = incTier(I, usedHours(y-1, I.from)), d = (cfg.incAwards||{})[y + '|' + I.id];
+  if(!award || j <= cfg.balanceIdx) return '';
+  const to = (TRACKS.find(T => T.k===I.to)||{name:''}).name.toLowerCase();
+  if(d==='yes') return '<p class="idone">✓ Added ' + fmtH(award) + ' to ' + to + ' on Jan 1, ' + y + '. <button type="button" data-iaward="no">Undo</button></p>';
+  if(d==='no') return '<p class="idone">Not added: ' + fmtH(award) + ' of ' + to + ' from Jan 1, ' + y + '. <button type="button" data-iaward="yes">Add it</button></p>';
+  return '<p class="idone">' + fmtH(award) + ' of ' + to + ' earned Jan 1, ' + y + ' is waiting. <button type="button" data-iaward="ask">Review</button></p>';
+}
+// January 1 popup: one incentive at a time, asks before touching the balance
+let incAsked = new Set();
+function incPrompt(force){
+  const y = dateOf(todayIdx).getUTCFullYear(), j = idxOf(y,0,1);
+  if(j > todayIdx || j <= cfg.balanceIdx || !$('incModal') || !$('incModal').hidden) return;
+  const I = (cfg.incentives||[]).find(I => I.on!==false && (force===I.id || !incAsked.has(I.id)) && !(cfg.incAwards||{})[y + '|' + I.id] && incTier(I, usedHours(y-1, I.from)) > 0);
+  if(!I) return;
+  incAsked.add(I.id);
+  const used = usedHours(y-1, I.from), award = incTier(I, used);
+  const from = (TRACKS.find(T => T.k===I.from)||{name:''}).name.toLowerCase(), to = (TRACKS.find(T => T.k===I.to)||{name:''}).name.toLowerCase();
+  const before = balances(j-1, j, I.to).get(j);
+  const unit = v => cfg.unit==='days' ? fmt(v) + ' days' : fmt(v) + ' hrs';
+  const add = cfg.unit==='days' ? (cfg.dayLen ? award / cfg.dayLen : 0) : award;
+  $('incBox').innerHTML = '<div class="big" aria-hidden="true">🎉😊</div><h3 id="incTitle">Happy New Year! You earned ' + fmtH(award) + ' of ' + to + '</h3>'
+    + '<p>You used <b>' + fmtH(used) + '</b> of ' + from + ' in ' + (y-1) + ', so your <b>' + esc(I.name) + '</b> pays <b>' + fmtH(award) + '</b>.</p>'
+    + '<p><b>Should I add this to your existing ' + to + ' hours?</b> Your ' + to + ' on Jan 1 goes from ' + unit(before) + ' to <b>' + unit(before + add) + '</b>.</p>'
+    + '<div class="acts"><button type="button" class="linkish yes" id="incYes">Yes, add ' + fmtH(award) + '</button>'
+    + '<button type="button" class="linkish" id="incNo">No</button><button type="button" class="linkish" id="incLater">Ask me later</button></div>';
+  $('incModal').hidden = false;
+  $('incYes').focus();
+  const done = v => { $('incModal').hidden = true; if(v){ cfg.incAwards = cfg.incAwards || {}; cfg.incAwards[y + '|' + I.id] = v; incCache = new Map(); save(); render(); } writeIncentives(); setTimeout(() => incPrompt(), 200); };
+  $('incYes').onclick = () => done('yes');
+  $('incNo').onclick = () => done('no');
+  $('incLater').onclick = () => done(null);
 }
 const fmtH = h => (Math.round(h*100)/100).toFixed(2).replace(/\.?0+$/, '') + ' hr' + (Math.abs(h - 1) < 1e-9 ? '' : 's');
 function wireIncentives(){
@@ -994,6 +1080,11 @@ function wireIncentives(){
     if(b.dataset.tdel!==undefined) I.tiers.splice(+b.dataset.tdel, 1);
     else if(b.hasAttribute('data-tadd')){ const top = Math.max(0, ...I.tiers.map(t => +t.upTo || 0)); I.tiers.push({upTo:top + 8, earn:0}); }
     else if(b.hasAttribute('data-idel')) cfg.incentives.splice(cfg.incentives.indexOf(I), 1);
+    else if(b.dataset.iaward){
+      const y = dateOf(todayIdx).getUTCFullYear();
+      if(b.dataset.iaward==='ask'){ incPrompt(I.id); return; }
+      cfg.incAwards = cfg.incAwards || {}; cfg.incAwards[y + '|' + I.id] = b.dataset.iaward;
+    }
     else return;
     changed(true);
   });
@@ -1084,6 +1175,7 @@ function writeFields(){
   applyTheme();
   writeHolidays();
   writeIncentives();
+  setTimeout(() => incPrompt(), 400);
 }
 
 /* ---- applying saved or imported data (accepts every older format) ---- */
@@ -1108,6 +1200,8 @@ function applyState(s){
   cfg.backdate = !!s.backdate;
   if(s.theme) cfg.theme = s.theme;
   cfg.holidays = (s.holidays && typeof s.holidays==='object') ? s.holidays : {};
+  if(s.holPreset==='wood'+'bury') s.holPreset = 'city';   // older saves used another name for the City schedule
+  if(s.presetIds && s.presetIds['wood'+'bury'] && !s.presetIds.city){ s.presetIds.city = s.presetIds['wood'+'bury']; delete s.presetIds['wood'+'bury']; }
   cfg.holPreset = HOL_PRESETS.some(P => P.id===s.holPreset) ? s.holPreset : '';
   cfg.customHols = Array.isArray(s.customHols)
     ? s.customHols.filter(C => C && typeof C.name==='string' && /^\d{4}-\d{2}-\d{2}$/.test(C.date||'')).map(C => ({id:String(C.id||('u'+Math.random().toString(36).slice(2,8))), name:C.name.slice(0,60), date:C.date, yearly:!!C.yearly, on:C.on!==false}))
@@ -1123,6 +1217,8 @@ function applyState(s){
     from:bank(I.from) || 's', to:bank(I.to) || 'v',
     tiers:(Array.isArray(I.tiers) ? I.tiers : []).filter(t => t && isFinite(+t.upTo)).map(t => ({upTo:Math.max(0, +t.upTo), earn:Math.max(0, +t.earn || 0)}))
   }));
+  cfg.incAwards = {};
+  if(s.incAwards && typeof s.incAwards==='object') for(const [k, v] of Object.entries(s.incAwards)) if(/^\d{4}\|/.test(k) && (v==='yes' || v==='no')) cfg.incAwards[k] = v;
   holCache = {}; incCache = new Map();
   if(s.show && typeof s.show==='object') TRACKS.forEach(T => { if(typeof s.show[T.k]==='boolean') cfg.show[T.k] = s.show[T.k]; });
   return true;
@@ -1133,7 +1229,7 @@ const snapshot = () => JSON.stringify({
   balanceDate:cfg.balanceDate, anchor:cfg.anchor, payDate:cfg.payDate, compStart:cfg.compStart,
   backdate:cfg.backdate, oncall:cfg.oncall, tracks:cfg.tracks, off:cfg.off,
   theme:cfg.theme, show:cfg.show, holidays:cfg.holidays, holPreset:cfg.holPreset, customHols:cfg.customHols,
-  presetIds:cfg.presetIds, incentives:cfg.incentives
+  presetIds:cfg.presetIds, incentives:cfg.incentives, incAwards:cfg.incAwards
 });
 
 /* ---- saving: your private space in this artifact, with a browser copy as fallback ---- */
@@ -1404,5 +1500,6 @@ async function boot(){
 }
 boot();
 </script>
+<div class="incmodal" id="incModal" role="dialog" aria-modal="true" aria-labelledby="incTitle" hidden><div class="incbox" id="incBox"></div></div>
 </body>
 </html>

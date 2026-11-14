@@ -4,7 +4,7 @@
 
 **Time Off Accrual Calendar: see what every day off will cost you before you book it**
 
-![Version](https://img.shields.io/badge/version-2026--11--13-6D28D9)
+![Version](https://img.shields.io/badge/version-2026--11--14-6D28D9)
 ![Single file](https://img.shields.io/badge/single%20file-HTML-4338CA)
 ![No account needed](https://img.shields.io/badge/no%20sign--up-required-334155)
 ![PageVault ready](https://img.shields.io/badge/PageVault-ready-2563eb)
@@ -56,15 +56,15 @@ A Better PTO Tracker is a calendar that shows what each of your time-off **banks
 | Opened from… | Saved to | Status shown in the app |
 |---|---|---|
 | **PageVault** | Your own server only, separately for each signed-in person. Nothing is kept in the browser. | *Saved to your server* |
-| **Claude** | Your Claude account, with this browser as a backup | *Saved to your account* |
 | **A local file** | This browser only. The app reminds you every 7 days to download a backup. | *Saved on this device only* |
 
 ## Versioning
 
-Every release is a new file named with the release date. The first release of a day is just the date; later releases that same day add `mk1`, `mk2`, `mk3`… (the count starts over each day), e.g. `A-Better-PTO-Tracker-2026-11-12.html`, then `A-Better-PTO-Tracker-2026-11-12-mk1.html`. The version also appears under the app's name. Older files stay in the repo, so PageVault can roll back to any of them.
+Every release is a new file named with the release date. The first release of a day is just the date; later releases that same day add `mk1`, `mk2`, `mk3`… (the count starts over each day), e.g. `A-Better-PTO-Tracker-2026-11-12.html`, then `A-Better-PTO-Tracker-2026-11-12-mk1.html`. The version also appears under the app's name. Older files usually stay in the repo, so PageVault can roll back to them.
 
 | Version | Notes |
 |---|---|
+| **2026-11-14** | Behind-the-scenes cleanup of the City holiday schedule; your saved schedule and edits carry over. Older release files were removed from the repo. |
 | **2026-11-13** | Version bump only, no changes. |
 | **2026-11-12 mk1** | Vacation incentive: milestone bar of the year's sick hours used (full at 0, shrinking as you use time, with ticks where the reward drops), green 😊 / red ☹️ message for what you'll get in January, and a January 1 popup asking whether to add the hours to your existing balance (Yes / No / Ask me later, with Undo in the tile). |
 | **2026-11-12** | New **Vacation incentive** tile next to Personal holiday: hours earned on January 1 based on sick leave used the year before (default chart: ≤8 hrs → 8, ≤16 → 6, ≤20 → 4), fully editable, with your own incentives. Holiday schedules renamed to **City** and **State**, and every schedule can now be edited; edits are saved with your data. |
