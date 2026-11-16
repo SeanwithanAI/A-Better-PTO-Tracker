@@ -4,7 +4,7 @@
 
 **Time Off Accrual Calendar: see what every day off will cost you before you book it**
 
-![Version](https://img.shields.io/badge/version-2026--11--16%20mk1-6D28D9)
+![Version](https://img.shields.io/badge/version-2026--11--16%20mk2-6D28D9)
 ![Single file](https://img.shields.io/badge/single%20file-HTML-4338CA)
 ![No account needed](https://img.shields.io/badge/no%20sign--up-required-334155)
 ![PageVault ready](https://img.shields.io/badge/PageVault-ready-2563eb)
@@ -62,9 +62,9 @@ The app is one self-contained `.html` file: no install, no account, nothing else
 3. Bookmark it, and always open it the same way: same file, same place, same browser. Your data is saved in that browser for that file, so a copy in another folder or another browser starts empty.
 
 **iPhone and iPad**
-Safari can't run a downloaded `.html` file. Tapping it in the Files app only shows a preview with the buttons turned off. Use one of these instead:
+**Because of iOS, an HTML file saved on your iPhone or iPad can't be opened in Safari.** iOS doesn't offer Safari as a way to open it, and tapping the file in the Files app only shows a preview with the buttons turned off. Use one of these instead:
 - **PageVault (recommended).** Open the app's PageVault link in **Safari**, then tap **Share** (on iOS 26, tap **•••** first, then **Share**). Scroll down the list and tap **Add to Home Screen**. If it isn't there, tap **Edit Actions** at the bottom of the list and add it. It then opens like a regular app, and your data is saved on your server and syncs with your other devices.
-- **Microsoft Edge.** Save the file to the Files app, then open it with Edge (in Files, open the file, tap **Share** and choose **Edge**). Keep backups: data saved this way can be lost if Edge clears its storage.
+- **Microsoft Edge (may work).** Save the file to the Files app, then try opening it with Edge (in Files, open the file, tap **Share** and choose **Edge**). Keep backups: data saved this way can be lost if Edge clears its storage.
 
 **Android**
 1. Download the file in Chrome.
@@ -87,6 +87,7 @@ Every release is a new file named with the release date. The first release of a 
 
 | Version | Notes |
 |---|---|
+| **2026-11-16 mk2** | The preview now says plainly that, because of iOS, an HTML file saved on an iPhone or iPad can't be opened in Safari, and points to PageVault instead. |
 | **2026-11-16 mk1** | The preview shown when the file can't run (like in the iPhone Files app) now explains how to open it on a computer, Android, iPhone and iPad. |
 | **2026-11-16** | Neutral defaults for new installs (no built-in payday or carry-over limit, a 4-week comp cycle) and the State holiday schedule has a new internal name. Your saved settings and holiday schedule carry over unchanged. |
 | **2026-11-14 mk2** | **Download app + data (.zip)** replaces Download this app: one click gives a zip with the app's HTML, your backup and a how-to-restore note. |
