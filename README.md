@@ -90,12 +90,27 @@ The app is one self-contained `.html` file: no install, no account, nothing else
 
 ## Versioning
 
-Only the newest release is kept here: `A-Better-PTO-Tracker-2026-11-16-mk3.html`. Each new release replaces it, and `docs/index.html` (what the web link opens) is updated to match. Your data isn't stored in the file, so moving to a new release keeps it (if you use the downloaded file, open the new one the same way as before, in the same browser, and download a backup first to be safe).
+Only the newest release is kept in the repo: `A-Better-PTO-Tracker-2026-11-16-mk3.html`. Each new release replaces it, and `docs/index.html` (what the web link opens) is updated to match. Your data isn't stored in the file, so moving to a new release keeps it (if you use the downloaded file, open the new one the same way as before, in the same browser, and download a backup first to be safe).
 
 Releases are named with their date. The first release of a day is just the date; later releases that same day add `mk1`, `mk2`, `mk3`… (the count starts over each day). The version is also shown inside the app.
 
+### Changelog
+
+Every release so far, newest first. Older releases are listed for reference; only the current one is available to download.
+
 | Version | Notes |
 |---|---|
-| **2026-11-16 mk3** | Current release. |
+| **2026-11-16 mk3** | **Use it online.** The app now has a web link, [seanwithanai.github.io/A-Better-PTO-Tracker](https://seanwithanai.github.io/A-Better-PTO-Tracker/), that works on any device, including iPhone and iPad, and always has the newest version. The preview shown when the file can't run points to it. |
+| **2026-11-16 mk2** | The preview now says plainly that, because of iOS, an HTML file saved on an iPhone or iPad can't be opened in Safari, and points to PageVault instead. |
+| **2026-11-16 mk1** | The preview shown when the file can't run (like in the iPhone Files app) now explains how to open it on a computer, Android, iPhone and iPad. |
+| **2026-11-16** | Neutral defaults for new installs (no built-in payday or carry-over limit, a 4-week comp cycle) and the State holiday schedule has a new internal name. Your saved settings and holiday schedule carry over unchanged. |
+| **2026-11-14 mk2** | **Download app + data (.zip)** replaces Download this app: one click gives a zip with the app's HTML, your backup and a how-to-restore note. |
+| **2026-11-14 mk1** | **Download this app** in settings (next to Back up and Import): the HTML file for this version, to keep or run on its own. |
+| **2026-11-14** | Behind-the-scenes cleanup of the City holiday schedule; your saved schedule and edits carry over. Older release files were removed from the repo. |
+| **2026-11-13** | Version bump only, no changes. |
+| **2026-11-12 mk1** | Vacation incentive: milestone bar of the year's sick hours used (full at 0, shrinking as you use time, with ticks where the reward drops), green 😊 / red ☹️ message for what you'll get in January, and a January 1 popup asking whether to add the hours to your existing balance (Yes / No / Ask me later, with Undo in the tile). |
+| **2026-11-12** | New **Vacation incentive** tile next to Personal holiday: hours earned on January 1 based on sick leave used the year before (default chart: ≤8 hrs → 8, ≤16 → 6, ≤20 → 4), fully editable, with your own incentives. Holiday schedules renamed to **City** and **State**, and every schedule can now be edited; edits are saved with your data. |
+| **2026-11-11 mk4** | Shows where data is saved: *Saved to your server* in PageVault (no backup reminders there), *Saved on this device only* elsewhere. The last edit is now saved even if the page is closed right away. |
+| **2026-11-11 mk3** | Previous release |
 
 <div align="center"><sub>A Better PTO Tracker · Time Off Accrual Calendar · by SeanwithanAI</sub></div>
