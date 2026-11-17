@@ -4,7 +4,7 @@
 
 **Time Off Accrual Calendar: see what every day off will cost you before you book it**
 
-![Version](https://img.shields.io/badge/version-2026--11--17-6D28D9)
+![Version](https://img.shields.io/badge/version-2026--11--17%20mk1-6D28D9)
 ![Single file](https://img.shields.io/badge/single%20file-HTML-4338CA)
 ![No account needed](https://img.shields.io/badge/no%20sign--up-required-334155)
 ![PageVault ready](https://img.shields.io/badge/PageVault-ready-2563eb)
@@ -28,7 +28,7 @@ A Better PTO Tracker is a calendar that shows what each of your time-off **banks
 - **Four banks, each with its own rules.** Starting balance, how much accrues each pay period, an accrual cap, and the most you can carry into a new year.
 - **Flexible schedules.** Accrue weekly, every 2 weeks, monthly or yearly. Comp time is earned per on-call cycle (every 4 to 9 weeks), and personal holiday is granted each January 1.
 - **A balance on every day.** Each calendar day shows the projected balance of every bank. Red means a bank has gone negative.
-- **One-tap booking.** Pick a bank, tap a day to spend it, or turn on **½ day** (or Shift-click) for a half day. **Clear day** wipes a date.
+- **One-tap booking.** Pick a bank, tap a day to spend it, or turn on **½ day** (or Shift-click) for a half day. **Edit day** lets you type exact hours (like 2.5) for a date. **Clear day** wipes a date.
 - **Paydays and pay periods.** Paydays are outlined in green, and a thin marker shows where each pay period starts.
 - **Holidays.** Choose a schedule (City, State, Federal, Private Sector, and more) or add your own. Change which holidays are in any schedule; your edits are saved with your data, not the app, and **Reset this schedule** puts it back. Holidays are labels only and never change the math.
 - **Vacation incentive.** Earn extra hours on January 1 for using little sick leave the year before. The default: 8 or fewer sick hours used earns 8 vacation hours, up to 16 earns 6, up to 20 earns 4. Edit the rows, pick which bank it's based on and which it pays into, or add your own incentives. A milestone bar starts full at 0 hours used and shrinks as you use sick time, with a green 😊 message showing what you're on track to earn (or a red ☹️ one if you won't get anything). On January 1 a popup asks before adding the hours to your balance. Saved with your data.
@@ -90,7 +90,7 @@ The app is one self-contained `.html` file: no install, no account, nothing else
 
 ## Versioning
 
-Only the newest release is kept in the repo: `A-Better-PTO-Tracker-2026-11-17.html`. Each new release replaces it, and `docs/index.html` (what the web link opens) is updated to match. Your data isn't stored in the file, so moving to a new release keeps it (if you use the downloaded file, open the new one the same way as before, in the same browser, and download a backup first to be safe).
+Only the newest release is kept in the repo: `A-Better-PTO-Tracker-2026-11-17-mk1.html`. Each new release replaces it, and `docs/index.html` (what the web link opens) is updated to match. Your data isn't stored in the file, so moving to a new release keeps it (if you use the downloaded file, open the new one the same way as before, in the same browser, and download a backup first to be safe).
 
 Releases are named with their date. The first release of a day is just the date; later releases that same day add `mk1`, `mk2`, `mk3`… (the count starts over each day). The version is also shown inside the app.
 
@@ -100,6 +100,7 @@ Every release so far, newest first. Older releases are listed for reference; onl
 
 | Version | Notes |
 |---|---|
+| **2026-11-17 mk1** | **Edit day** sets exact hours off on a date (like 2.5 hours for an appointment). Turn it on, pick a bank, and tap a day: a panel slides up with a number box, **½ day** and **full day** shortcuts, and **Remove** if something's already booked. The **½ day** button still works as before. Odd amounts show next to the balance on the calendar (for example **2.5h**). Days booked with older versions don't change. The version shown inside the app now matches the release. |
 | **2026-11-17** | Comp time's on-call cycle can now be set to **every 8 weeks** or **every 9 weeks**, alongside 4 to 7. |
 | **2026-11-16 mk5** | PageVault save status is accurate: a change on its way now shows **Saving to your server…** instead of briefly saying **Can't reach your server**, which only appears if a change still hasn't gone through after 10 seconds. |
 | **2026-11-16 mk4** | **Room to grow.** Opened on its own, the app now keeps its data in the browser's large storage (IndexedDB) instead of the small save area (about 5 MB, shared with every page on the same site), so a big history never runs out of room. Your data moves over automatically the first time you open this version. The app asks the browser to keep its data, and says so plainly if the browser ever can't save. In PageVault nothing changes. (An older copy of the file opened afterwards won't see data saved by this version, so use this one or newer.) |

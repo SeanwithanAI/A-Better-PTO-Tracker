@@ -134,6 +134,7 @@
   .pick[data-k="p"][aria-pressed="true"]{background:var(--p);border-color:var(--p)}
   .halfbtn{font:inherit;font-size:13.5px;font-weight:600;background:var(--surface);border:1px solid var(--line);color:var(--ink-soft);padding:8px 14px;border-radius:999px;cursor:pointer;box-shadow:var(--shadow-sm);margin-left:auto}
   .halfbtn[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--canvas)}
+  .halfbtn + .halfbtn{margin-left:0}
   .dow .s{display:none}
   .pick[data-k="x"]{margin-left:4px;border-style:dashed}
   .pick[data-k="x"][aria-pressed="true"]{background:var(--ink);border-color:var(--ink);border-style:solid;color:var(--canvas)}
@@ -256,6 +257,17 @@
   .incbox .acts .linkish{flex:1 1 auto;min-height:42px}
   .incbox .acts .yes{background:var(--v);border-color:var(--v);color:var(--on-accent)}
   .incbtns .linkish{font-size:12.5px;padding:7px 12px}
+  /* edit one day: exact hours (or days) off for the selected bank */
+  .offbox label{display:block;margin:4px 0 10px}
+  .offbox .flabel{display:block;margin-bottom:6px}
+  .offbox input{font-size:20px;padding:12px 14px}
+  .offquick{display:flex;gap:8px;flex-wrap:wrap}
+  .offquick .linkish{flex:1 1 0;min-height:42px;font-size:13px}
+  .offbox .acts .remove{color:var(--warn)}
+  @media (max-width:640px){
+    .incmodal.bottom{align-items:flex-end;padding:0}
+    .incmodal.bottom .incbox{width:100%;border-radius:18px 18px 0 0;padding-bottom:calc(18px + env(safe-area-inset-bottom,0px))}
+  }
   fieldset.dates{margin-top:16px}
   fieldset.dates legend::before{background:var(--ink-soft)}
   .holpanel{margin-top:16px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);box-shadow:var(--shadow);padding:0 18px}
@@ -413,7 +425,7 @@
 <body>
 <div id="nojs" style="max-width:560px;width:calc(100% - 32px);box-sizing:border-box;margin:40px auto;padding:22px 24px;border:1px solid #E4E7EC;border-radius:16px;background:#fff;color:#101828;font:15px/1.6 system-ui,-apple-system,sans-serif">
   <h1 style="font-size:24px;font-weight:800;margin:0 0 6px;letter-spacing:-.02em">A Better PTO Tracker</h1>
-  <p style="margin:0 0 14px;color:#667085;font-weight:600">Time Off Accrual Calendar · Version 2026-11-16 mk5 · by SeanwithanAI</p>
+  <p style="margin:0 0 14px;color:#667085;font-weight:600">Time Off Accrual Calendar · Version 2026-11-17 mk1 · by SeanwithanAI</p>
   <p style="margin:8px 0 0">This preview can’t run the app. Previews like the iPhone Files app show web pages without running them, so it stays blank here. To use it:</p>
   <p style="margin:8px 0 0"><b>Easiest, on any device:</b> use it online at <a href="https://seanwithanai.github.io/A-Better-PTO-Tracker/">seanwithanai.github.io/A-Better-PTO-Tracker</a>. Nothing to install, and your data stays in your browser on your device.</p>
   <p style="margin:8px 0 0"><b>On a computer:</b> double-click the file, or drag it onto Chrome, Edge, Firefox or Safari.</p>
@@ -423,7 +435,7 @@
 </div>
 <div class="sheet">
   <header>
-    <div class="brand"><svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="A Better PTO Tracker logo"> <defs> <linearGradient id="lgbg" x1="0" y1="0" x2="1" y2="1"> <stop offset="0" stop-color="#3B82F6"/><stop offset="1" stop-color="#6D28D9"/> </linearGradient> <linearGradient id="lggl" x1="0" y1="0" x2="0" y2="1"> <stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".55" stop-color="#fff" stop-opacity="0"/> </linearGradient> </defs> <rect width="64" height="64" rx="15" fill="url(#lgbg)"/> <rect width="64" height="64" rx="15" fill="url(#lggl)"/> <circle cx="32" cy="32" r="20.5" fill="none" stroke="#fff" stroke-opacity=".25" stroke-width="4.5"/> <circle cx="32" cy="32" r="20.5" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="96.6 200" transform="rotate(-90 32 32)"/> <circle cx="11.5" cy="32" r="4.2" fill="#fff"/> <circle cx="11.5" cy="32" r="1.8" fill="#6D28D9"/> <path transform="translate(32.5 31.5) rotate(45) scale(1.05)" fill="#fff" d="M0,-11 C1.3,-11 2,-9.8 2,-8.5 L2,-3 L11,2.5 L11,5 L2,2.5 L2,7 L5,9.5 L5,11 L0,9.8 L-5,11 L-5,9.5 L-2,7 L-2,2.5 L-11,5 L-11,2.5 L-2,-3 L-2,-8.5 C-2,-9.8 -1.3,-11 0,-11 Z"/> </svg><span class="bname">A Better PTO Tracker<small>Time Off Accrual Calendar</small><small class="by">by SeanwithanAI</small><b class="ver" id="appVer">2026-11-16 mk5</b></span></div>
+    <div class="brand"><svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="A Better PTO Tracker logo"> <defs> <linearGradient id="lgbg" x1="0" y1="0" x2="1" y2="1"> <stop offset="0" stop-color="#3B82F6"/><stop offset="1" stop-color="#6D28D9"/> </linearGradient> <linearGradient id="lggl" x1="0" y1="0" x2="0" y2="1"> <stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".55" stop-color="#fff" stop-opacity="0"/> </linearGradient> </defs> <rect width="64" height="64" rx="15" fill="url(#lgbg)"/> <rect width="64" height="64" rx="15" fill="url(#lggl)"/> <circle cx="32" cy="32" r="20.5" fill="none" stroke="#fff" stroke-opacity=".25" stroke-width="4.5"/> <circle cx="32" cy="32" r="20.5" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="96.6 200" transform="rotate(-90 32 32)"/> <circle cx="11.5" cy="32" r="4.2" fill="#fff"/> <circle cx="11.5" cy="32" r="1.8" fill="#6D28D9"/> <path transform="translate(32.5 31.5) rotate(45) scale(1.05)" fill="#fff" d="M0,-11 C1.3,-11 2,-9.8 2,-8.5 L2,-3 L11,2.5 L11,5 L2,2.5 L2,7 L5,9.5 L5,11 L0,9.8 L-5,11 L-5,9.5 L-2,7 L-2,2.5 L-11,5 L-11,2.5 L-2,-3 L-2,-8.5 C-2,-9.8 -1.3,-11 0,-11 Z"/> </svg><span class="bname">A Better PTO Tracker<small>Time Off Accrual Calendar</small><small class="by">by SeanwithanAI</small><b class="ver" id="appVer">2026-11-17 mk1</b></span></div>
     <div class="headright">
       <span class="syncwrap"><span class="sync" id="sync" role="status">Loading…</span>
       <button type="button" class="nudge" id="nudge" hidden></button></span>
@@ -465,7 +477,7 @@
   </div>
 
   <p class="hint">
-    Pick a bank, then tap a day to spend it. Turn on <b>½ day</b> (or Shift-click) to book a half day; tap again to undo. On a phone, swipe the calendar left or right to change months.
+    Pick a bank, then tap a day to spend it. Turn on <b>½ day</b> (or Shift-click) to book a half day; tap again to undo. Turn on <b>Edit day</b> to set exact hours on a date, like 2.5 hours for an appointment (it has ½ day and full day shortcuts too). On a phone, swipe the calendar left or right to change months.
     Every day shows what each bank will be worth on that date, so you can see what a week off costs you before you book it.<br>
     <b>Clear day</b> wipes every bank on one date. Clicking the selected bank again turns it off, and days stop responding.<br>
     Green outline is payday, counted from the <b>recent payday</b> you enter under Anchor dates. The gray sliver marks where a pay period starts. Purple is a holiday you get off (pick a schedule or add your own under <b>Holidays</b> below); it’s a label only and never touches the math. Blue bar is an on-call week, which is where comp time is earned. Red means that bank has gone negative.<br>
@@ -485,7 +497,7 @@
     <button class="linkish" id="doSelf" title="One zip with this version of the app and a backup of your data, to keep or to run on its own.">Download app + data (.zip)</button>
   </div>
 
-  <p class="appinfo"><b>A Better PTO Tracker</b> · Time Off Accrual Calendar · Version <span id="appVer2">2026-11-16 mk5</span> · by SeanwithanAI</p>
+  <p class="appinfo"><b>A Better PTO Tracker</b> · Time Off Accrual Calendar · Version <span id="appVer2">2026-11-17 mk1</span> · by SeanwithanAI</p>
 
   <div class="io" id="io">
     <h2 id="ioTitle">Back up</h2>
@@ -565,7 +577,7 @@ async function downloadBundle(o){
 document.getElementById('nojs').remove();
 document.documentElement.classList.add('js');
 // version = the date of the update; a second update that day is "mk2", then "mk3"…
-const APP_NAME = 'A Better PTO Tracker', APP_VERSION = '2026-11-17', APP_BY = 'SeanwithanAI';   // bump the version with every update
+const APP_NAME = 'A Better PTO Tracker', APP_VERSION = '2026-11-17 mk1', APP_BY = 'SeanwithanAI';   // bump the version with every update
 const FILE_BASE = APP_NAME.replace(/ /g, '-');   // A-Better-PTO-Tracker
 setTimeout(() => { const b = document.getElementById('doSelf'); if(b) b.onclick = () => downloadBundle({title:APP_NAME, version:APP_VERSION, base:FILE_BASE, htmlName:FILE_BASE + '-' + APP_VERSION.replace(/ /g, '-') + '.html', dataName:FILE_BASE + '-backup-' + iso(todayIdx) + '.json',
   data:snapshot, done:markBackedUp, restore:'open the settings, choose Import, pick the file, then tap Load this data', say:m => { b.textContent = m; clearTimeout(b._t); b._t = setTimeout(() => b.textContent = 'Download app + data (.zip)', 4000); }}); });
@@ -704,7 +716,7 @@ let incCache = new Map();
 // hours of bank k marked on the calendar in year y
 function usedHours(y, k){
   let h = 0;
-  for(const [d, v] of Object.entries(cfg.off)) if(+d.slice(0,4)===y && v[k]) h += v[k] * cfg.dayLen;
+  for(const [d, v] of Object.entries(cfg.off)) if(+d.slice(0,4)===y && v[k]) h += offDays(v[k]) * cfg.dayLen;
   return h;
 }
 // what an incentive pays for a year's usage (hours), using the first tier the usage fits under
@@ -731,7 +743,7 @@ function incentiveOn(i, k){
 
 /* ---- state ---- */
 const cfg = { dayLen:8, unit:'hours', active:'v', balanceDate:'', anchor:'', payDate:'', compStart:'', backdate:false, oncall:false, off:{}, tracks:{}, theme:'auto', show:{v:true,s:true,c:true,p:true}, holidays:{}, holPreset:'', customHols:[], presetIds:{}, incentives:[INC_DEFAULT()], incAwards:{} };
-let view, todayIdx, halfMode = false;
+let view, todayIdx, halfMode = false, editMode = false;
 
 const anchorFor = k => k==='c' ? (cfg.compStartIdx ?? cfg.anchorIdx) : cfg.anchorIdx;
 
@@ -793,7 +805,12 @@ function isOnCall(i){
   return ((((i-a)%n)+n)%n) < 7;
 }
 const dayUnit = () => cfg.unit==='days' ? 1 : cfg.dayLen;
-const offOn = (i,k) => ((cfg.off[iso(i)]||{})[k] || 0) * dayUnit();
+// a day off is stored as a share of a day (1, 0.5), or as exact hours {h:2.5} when set with Edit day
+const offDays = x => x && typeof x==='object' ? (cfg.dayLen ? (+x.h||0) / cfg.dayLen : 0) : (+x || 0);
+const offOn = (i,k) => offDays((cfg.off[iso(i)]||{})[k]) * dayUnit();
+// short marker for a booked amount that isn't a full day
+const offMark = x => { if(x===0.5) return '\u00bd'; if(!x || x===1) return ''; const v = offDays(x) * dayUnit(); return (Math.round(v*100)/100) + (cfg.unit==='days' ? 'd' : 'h'); };
+const offSay = x => x===1 ? 'day off' : x===0.5 ? 'half day off' : fmt(offDays(x) * dayUnit()) + (cfg.unit==='days' ? ' days off' : ' hours off');
 
 // balance at the end of each day, walking out from the known-good date
 function balances(from,to,k){
@@ -862,10 +879,10 @@ function render(){
     if(known) TRACKS.filter(T => cfg.show[T.k]).forEach(T => {
       const v = bal[T.k].get(i), tk = taken[T.k];
       rows += '<span class="r r-' + T.k + (tk?' taken':'') + (v<0?' neg':'') + '">'
-        + '<i>' + T.letter + '</i><b>' + fmtCell(v) + (tk===0.5?'<span class="half">\u00bd</span>':'') + '</b></span>';
+        + '<i>' + T.letter + '</i><b>' + fmtCell(v) + (offMark(tk)?'<span class="half">' + offMark(tk) + '</span>':'') + '</b></span>';
       const gone = bal[T.k].lost.get(i);
       const inc = incentiveOn(i, T.k);
-      aria.push(T.name + ' ' + fmt(v) + (inc ? ', +' + fmt(inc) + ' incentive' : '') + (tk ? (tk===0.5?', half day off':', day off') : '') + (gone ? ', ' + fmt(gone) + ' lost at year end' : ''));
+      aria.push(T.name + ' ' + fmt(v) + (inc ? ', +' + fmt(inc) + ' incentive' : '') + (tk ? ', ' + offSay(tk) : '') + (gone ? ', ' + fmt(gone) + ' lost at year end' : ''));
     });
     else aria.push('before the as-of date');
     cell.innerHTML = '<span class="dtop"><span class="dnum">' + d.getUTCDate() + '</span>'
@@ -874,7 +891,7 @@ function render(){
     if(hol) cell.title = hol;
     cell.setAttribute('aria-label', d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',timeZone:'UTC'})
       + (hol ? ', ' + hol : '') + (oc ? ', on-call week' : '') + (pay ? ', payday' : '') + ': ' + aria.join('; '));
-    cell.addEventListener('click', e => toggle(i, e.shiftKey || halfMode));
+    cell.addEventListener('click', e => editMode && cfg.active && cfg.active!=='x' ? editDay(i) : toggle(i, e.shiftKey || halfMode));
     grid.appendChild(cell);
   }
 
@@ -909,6 +926,47 @@ function toggle(i, half){
   if(cur[k]===want) delete cur[k]; else cur[k] = want;
   if(Object.keys(cur).length) cfg.off[key] = cur; else delete cfg.off[key];
   save(); render(); writeIncentives();
+}
+
+// Edit day: type the exact amount off for the selected bank on one date
+function editDay(i){
+  const key = iso(i), k = cfg.active, T = TRACKS.find(T => T.k===k);
+  if(!T || (!cfg.backdate && i < cfg.balanceIdx)) return;
+  const days = cfg.unit==='days', full = days ? 1 : cfg.dayLen, cur = (cfg.off[key]||{})[k];
+  const now = cur ? Math.round(offDays(cur) * dayUnit() * 100) / 100 : '';
+  const u = v => days ? (v===1 ? '1 day' : v + ' days') : fmtH(v);
+  const when = dateOf(i).toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',year:'numeric',timeZone:'UTC'});
+  const m = $('offModal');
+  $('offBox').innerHTML = '<h3 id="offTitle">' + T.name + ' · ' + when + '</h3>'
+    + '<label><span class="flabel">' + (days ? 'Days off' : 'Hours off') + '</span>'
+    + '<input type="number" id="offAmt" min="0" step="' + (days ? '0.05' : '0.25') + '" inputmode="decimal" enterkeyhint="done" placeholder="0" value="' + now + '"></label>'
+    + '<div class="offquick"><button type="button" class="linkish" data-v="' + full/2 + '">½ day (' + u(full/2) + ')</button>'
+    + '<button type="button" class="linkish" data-v="' + full + '">Full day (' + u(full) + ')</button></div>'
+    + '<div class="acts"><button type="button" class="linkish yes" id="offSave">Save</button>'
+    + (cur ? '<button type="button" class="linkish remove" id="offDel">Remove</button>' : '')
+    + '<button type="button" class="linkish" id="offCancel">Cancel</button></div>';
+  m.hidden = false;
+  const inp = $('offAmt'), back = document.activeElement;
+  const close = () => { m.hidden = true; m.onclick = null; document.removeEventListener('keydown', esc1); if(back && back.focus) back.focus(); };
+  const esc1 = e => { if(e.key==='Escape') close(); };
+  const set = v => {
+    const c = cfg.off[key] || {};
+    if(!(v > 0)) delete c[k];
+    else if(days) c[k] = Math.round(v*1000)/1000;
+    else if(Math.abs(v - cfg.dayLen) < 1e-9) c[k] = 1;
+    else if(Math.abs(v - cfg.dayLen/2) < 1e-9) c[k] = 0.5;
+    else c[k] = {h: Math.round(v*100)/100};
+    if(Object.keys(c).length) cfg.off[key] = c; else delete cfg.off[key];
+    close(); save(); render(); writeIncentives();
+  };
+  $('offBox').querySelectorAll('.offquick .linkish').forEach(b => b.onclick = () => set(+b.dataset.v));
+  $('offSave').onclick = () => set(parseFloat(inp.value));
+  if($('offDel')) $('offDel').onclick = () => set(0);
+  $('offCancel').onclick = close;
+  inp.addEventListener('keydown', e => { if(e.key==='Enter'){ e.preventDefault(); set(parseFloat(inp.value)); } });
+  m.onclick = e => { if(e.target===m) close(); };
+  document.addEventListener('keydown', esc1);
+  inp.focus(); inp.select();
 }
 
 /* ---- fields ---- */
@@ -1019,13 +1077,17 @@ function buildPanels(){
   $('picker').innerHTML += TRACKS.map(T =>
     '<button class="pick" data-k="' + T.k + '" aria-pressed="false">' + T.name + '</button>').join('')
     + '<button class="pick" data-k="x" aria-pressed="false">Clear day</button>'
-    + '<button type="button" class="halfbtn" id="halfBtn" aria-pressed="false">\u00bd day</button>';
+    + '<button type="button" class="halfbtn" id="halfBtn" aria-pressed="false">\u00bd day</button>'
+    + '<button type="button" class="halfbtn" id="editBtn" aria-pressed="false" title="Tap a day to set exact hours off">Edit day</button>';
   document.querySelectorAll('.pick').forEach(b => b.onclick = () => {
     cfg.active = (cfg.active===b.dataset.k) ? null : b.dataset.k;
     save(); render();
   });
 
-  $('halfBtn').onclick = () => { halfMode = !halfMode; $('halfBtn').setAttribute('aria-pressed', halfMode); };
+  // ½ day and Edit day are either/or
+  const modes = () => { $('halfBtn').setAttribute('aria-pressed', halfMode); $('editBtn').setAttribute('aria-pressed', editMode); };
+  $('halfBtn').onclick = () => { halfMode = !halfMode; if(halfMode) editMode = false; modes(); };
+  $('editBtn').onclick = () => { editMode = !editMode; if(editMode) halfMode = false; modes(); };
 
   $('shows').innerHTML += TRACKS.map(T =>
     '<button class="vis" data-k="' + T.k + '" aria-pressed="true">' + T.name + '</button>').join('');
@@ -1620,6 +1682,7 @@ async function boot(){
 }
 boot();
 </script>
+<div class="incmodal bottom" id="offModal" role="dialog" aria-modal="true" aria-labelledby="offTitle" hidden><div class="incbox offbox" id="offBox"></div></div>
 <div class="incmodal" id="incModal" role="dialog" aria-modal="true" aria-labelledby="incTitle" hidden><div class="incbox" id="incBox"></div></div>
 </body>
 </html>
