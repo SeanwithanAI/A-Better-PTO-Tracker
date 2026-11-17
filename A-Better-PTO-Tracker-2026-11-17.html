@@ -565,7 +565,7 @@ async function downloadBundle(o){
 document.getElementById('nojs').remove();
 document.documentElement.classList.add('js');
 // version = the date of the update; a second update that day is "mk2", then "mk3"…
-const APP_NAME = 'A Better PTO Tracker', APP_VERSION = '2026-11-16 mk5', APP_BY = 'SeanwithanAI';   // bump the version with every update
+const APP_NAME = 'A Better PTO Tracker', APP_VERSION = '2026-11-17', APP_BY = 'SeanwithanAI';   // bump the version with every update
 const FILE_BASE = APP_NAME.replace(/ /g, '-');   // A-Better-PTO-Tracker
 setTimeout(() => { const b = document.getElementById('doSelf'); if(b) b.onclick = () => downloadBundle({title:APP_NAME, version:APP_VERSION, base:FILE_BASE, htmlName:FILE_BASE + '-' + APP_VERSION.replace(/ /g, '-') + '.html', dataName:FILE_BASE + '-backup-' + iso(todayIdx) + '.json',
   data:snapshot, done:markBackedUp, restore:'open the settings, choose Import, pick the file, then tap Load this data', say:m => { b.textContent = m; clearTimeout(b._t); b._t = setTimeout(() => b.textContent = 'Download app + data (.zip)', 4000); }}); });
@@ -579,7 +579,7 @@ const $ = id => document.getElementById(id);
 
 const STD = [['biweekly','Every 2 weeks'],['weekly','Every week'],['semi-1-15','Twice a month, 1st & 15th'],['semi-15-last','Twice a month, 15th & last day'],['monthly','Once a month']];
 const YEARLY = [['yearly','Once a year, January 1']];
-const CYC = [['w4','Every 4 weeks'],['w5','Every 5 weeks'],['w6','Every 6 weeks'],['w7','Every 7 weeks']];
+const CYC = [['w4','Every 4 weeks'],['w5','Every 5 weeks'],['w6','Every 6 weeks'],['w7','Every 7 weeks'],['w8','Every 8 weeks'],['w9','Every 9 weeks']];
 const TRACKS = [
   {k:'v', name:'Vacation', letter:'V', opts:STD, def:{balance:80, accrual:4,  schedule:'biweekly'}},
   {k:'s', name:'Sick',     letter:'S', opts:STD, def:{balance:40, accrual:4,  schedule:'biweekly'}},
@@ -745,6 +745,8 @@ function isPeriodStart(i, t, k){
     case 'w5': return every(35);
     case 'w6': return every(42);
     case 'w7': return every(49);
+    case 'w8': return every(56);
+    case 'w9': return every(63);
     case 'yearly': return dom===1 && d.getUTCMonth()===0;
     case 'semi-1-15':    return dom===1 || dom===15;
     case 'semi-15-last': return dom===15 || dom===dim(d.getUTCFullYear(),d.getUTCMonth());
@@ -783,7 +785,7 @@ function isPayday(i){
   return PAY_TRACKS.some(k => paydayOfPeriod(i,k) === i);
 }
 
-const CYCLE = {w4:28, w5:35, w6:42, w7:49};
+const CYCLE = {w4:28, w5:35, w6:42, w7:49, w8:56, w9:63};
 function isOnCall(i){
   const a = anchorFor('c');
   if(!cfg.oncall || a==null) return false;
